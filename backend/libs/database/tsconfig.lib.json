@@ -1,9 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declaration": false,
-    "outDir": "../../dist/apps/product-service"
+    "declaration": true,
+    "outDir": "../../dist/libs/database"
   },
-  "include": ["src/**/*", "../../libs/**/*"],
+  "include": ["**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }

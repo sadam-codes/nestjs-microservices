@@ -11,7 +11,7 @@ import { Sequelize } from 'sequelize-typescript';
         dialect: 'postgres',
         uri: configService.get<string>('DATABASE_URL'),
         autoLoadModels: true,
-        synchronize: true, // Set to false in production
+        synchronize: true,
         dialectOptions: configService.get<string>('DATABASE_URL')?.includes('supabase') || process.env.NODE_ENV === 'production' ? {
           ssl: {
             require: true,

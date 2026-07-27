@@ -4,8 +4,7 @@
   "sourceRoot": "apps/auth-service/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
-    "tsConfigPath": "apps/auth-service/tsconfig.app.json"
+    "webpack": false
   },
   "monorepo": true,
   "root": "apps/auth-service",
@@ -26,6 +25,15 @@
       "sourceRoot": "apps/product-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/product-service/tsconfig.app.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     }
   }
