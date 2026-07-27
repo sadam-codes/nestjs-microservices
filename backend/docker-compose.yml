@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # ==========================================
+  # MICROSERVICES
+  # ==========================================
+  auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: auth-service
+    container_name: auth_service_container
+    restart: always
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    environment:
+      PORT: 3001
+      JWT_SECRET: super-secret-key-for-2026-tech-era
+
+  product-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: product-service
+    container_name: product_service_container
+    restart: always
+    ports:
+      - "3002:3002"
+    env_file:
+      - .env
+    environment:
+      PORT: 3002
